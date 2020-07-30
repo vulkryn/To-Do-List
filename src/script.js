@@ -40,6 +40,12 @@ function clearListOnClick() {
     }
 }
 
+function completeTaskOnClick() {
+    if (event.target.tagName === "LI") {
+        event.target.classList.toggle("finished");
+    }
+}
+
 function deleteTaskOnClick(e) {
     if (e.target.className === "delete") {
         event.target.parentElement.remove();
@@ -51,5 +57,7 @@ addButton.addEventListener("click", addTaskOnClick);
 input.addEventListener("keypress", addTaskOnKeypress);
 
 clearButton.addEventListener("click", clearListOnClick);
+
+ul.addEventListener("click", completeTaskOnClick);
 
 ul.addEventListener("click", deleteTaskOnClick);
